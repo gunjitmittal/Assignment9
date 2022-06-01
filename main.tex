@@ -1,0 +1,233 @@
+\let\negmedspace\undefined{}
+\let\negthickspace\undefined{}
+
+\documentclass{beamer}
+\usepackage{amsthm}
+ \usepackage{gensymb}
+ \usepackage{polynom}
+\usepackage{amssymb}
+%
+  \usepackage{stfloats}
+\usepackage{bm} 
+ \usepackage{longtable}
+ \usepackage{enumitem}
+ \usepackage{mathtools}
+ \usepackage{tikz}
+  %  \usepackage[breaklinks=true]{hyperref}
+  \usepackage{listings}
+\usepackage{color}                                            
+\usepackage{array}                                            
+\usepackage{longtable}                                        
+\usepackage{calc}                                             
+     \usepackage{multirow}                                         
+     \usepackage{hhline}                                           
+     \usepackage{ifthen}                                           
+     \usepackage{lscape}     
+\usetheme{CambridgeUS}
+\DeclareMathOperator*{\Res}{Res}
+\DeclareMathOperator*{\equals}{=}
+\renewcommand\thesection{\arabic{section}}
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+\renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
+% \renewcommand\thesectiondis{\arabic{section}}
+% \renewcommand\thesubsectiondis{\thesectiondis.\arabic{subsection}}
+% \renewcommand\thesubsubsectiondis{\thesubsectiondis.\arabic{subsubsection}}
+\hyphenation{op-tical net-works semi-conduc-tor}
+ \def\inputGnumericTable{}                                 %%
+\lstset{ 
+frame=single,
+breaklines=true,
+columns=fullflexible
+}
+
+% \newtheorem{theorem}{Theorem}[section]
+% \newtheorem{problem}{Problem}
+% \newtheorem{proposition}{Proposition}[section]
+% \newtheorem{lemma}{Lemma}[section]
+% \newtheorem{corollary}[theorem]{Corollary}
+% \newtheorem{example}{Example}[section]
+% \newtheorem{definition}[problem]{Definition}
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\newcommand*\circled[1]{\tikz[baseline= (char.base)]{
+    \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+\bibliographystyle{IEEEtran}
+\providecommand{\mbf}{\mathbf}
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\qfunc}[1]{\ensuremath{Q\left(#1\right)}}
+\providecommand{\sbrak}[1]{\ensuremath{{}\left[#1\right]}}
+\providecommand{\lsbrak}[1]{\ensuremath{{}\left[#1\right.]}}
+\providecommand{\rsbrak}[1]{\ensuremath{{}\left[#1\right.]}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\providecommand{\lbrak}[1]{\ensuremath{\left(#1\right.)}
+\providecommand{\rbrak}[1]{\ensuremath{\left[#1\right.]}}}
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+\providecommand{\lcbrak}[1]{\ensuremath{\left\{#1\right.}}
+\providecommand{\rcbrak}[1]{\ensuremath{\left.#1\right\}}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+\newcommand{\sgn}{\mathop{\mathrm{sgn}}}
+\providecommand{\abs}[1]{\left\vert#1\right\vert}
+\providecommand{\res}[1]{\Res\displaylimits_{#1}} 
+\providecommand{\norm}[1]{\left\lVert#1\right\rVert}
+\providecommand{\mtx}[1]{\mathbf{#1}}
+\providecommand{\mean}[1]{E\left[ #1 \right]}
+\providecommand{\fourier}{\overset{\mathcal{F}}{ \rightleftharpoons}}
+\providecommand{\system}{\overset{\mathcal{H}}{ \longleftrightarrow}}
+% \newcommand{\solution}{\noindent \textbf{Solution: }}
+\newcommand{\cosec}{\,\text{cosec}\,}
+\newcommand*{\permcomb}[4][0mu]{{{}^{#3}\mkern#1#2_{#4}}}
+\newcommand*{\perm}[1][-3mu]{\permcomb[#1]{P}}
+\newcommand*{\comb}[1][-1mu]{\permcomb[#1]{C}}
+\renewcommand{\thetable}{\arabic{table}} 
+\providecommand{\dec}[2]{\ensuremath{\overset{#1}{\underset{#2}{\gtrless}}}}
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
+\numberwithin{equation}{section}
+\numberwithin{figure}{section}
+\numberwithin{table}{section}
+\makeatletter
+\@addtoreset{figure}{problem}
+\makeatother
+\let\StandardTheFigure\thefigure{}
+\let\vec\mathbf{}
+\def\putbox#1#2#3{\makebox[0in][l]{\makebox[#1][l]{}\raisebox{\baselineskip}[0in][0in]{\raisebox{#2}[0in][0in]{#3}}}}
+     \def\rightbox#1{\makebox[0in][r]{#1}}
+     \def\centbox#1{\makebox[0in]{#1}}
+     \def\topbox#1{\raisebox{-\baselineskip}[0in][0in]{#1}}
+     \def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
+\vspace{3cm}
+\title{Assignment 9 Papoulis ex 6.63}
+\author{Gunjit Mittal (AI21BTECH11011)}
+\date{\today}
+\logo{\large \LaTeX}
+\begin{document} 
+\begin{frame}
+  \titlepage{}
+\end{frame}
+\logo{}
+\begin{frame}{Outline}
+  \tableofcontents
+\end{frame}
+% Download all python codes from 
+% \begin{lstlisting}
+% https://github.com/GunjitMittal/Assignment6/tree/main/Assignment6/code
+% \end{lstlisting}     
+% Download all latex codes from 
+% \begin{lstlisting}
+% https://github.com/GunjitMittal/Assignment6/tree/main/Assignment6 
+% \end{lstlisting} 
+\section{Question}
+\begin{frame}{Question}
+For any two random variables x and y, let $\sigma^2_x = Var\cbrak{x},\sigma^2_y = Var\cbrak{y} and \sigma^2_{x+y} = Var\cbrak{x+y}$\\
+(a) show that
+\begin{align*}
+    \frac{\sigma_{x+y}}{\sigma_x+\sigma_y}\leq1
+\end{align*}
+(b)More generally, show that for p $\geq$ 1
+\begin{align*}
+  \frac{\cbrak{{E(|x+y|}^p)}^{1/p}}{\cbrak{{E(|x|}^p)}^{1/p}+\cbrak{{E(|y|}^p)}^{1/p}} \leq 1
+\end{align*}
+\end{frame}
+\section{Solution (a)} 
+\begin{frame}{Solution (a)}
+For any two two random variables X and Y we have 
+\begin{align*}
+  &\sigma_{X+Y} = Var(X+Y) = E\sbrak{\cbrak{\brak{X-\mu_X}+\brak{Y-\mu_Y}}^2}\\
+  &~~~~~~~~~~~~=Var(X)+Var(Y)+2Cov(X,Y) = \sigma^2_X + \sigma^2_Y +2 \sigma_X\sigma_Y\rho_{XY}\\
+  &~~~~~~~~~~~~~\leq \brak{\sigma_X+\sigma_Y}^2
+\end{align*}
+Since $|\rho_{XY}|\leq1$.Thus
+\begin{align*}
+  \sigma_{X+Y}\leq \sigma_X + \sigma_Y,
+\end{align*}
+and hence it easily follows that
+\begin{align*}
+  \frac{\sigma_{X+Y}}{\sigma_X+\sigma_Y}\leq1.
+\end{align*}
+\end{frame}
+\section{Solution (b)}
+\begin{frame}{Solution (b)}  
+We shall prove this result in three parts by making use of Holder's inequality.\\
+(i)\textbf{ Holder's inequality:} The function $\log x$ is concave, for $0<\alpha<1$, and hence we have
+\begin{align*}
+  \log \sbrak{\alpha x_1+(1-\alpha)x_2} \geq \alpha \log x_1+(1-\alpha)\log x_2
+\end{align*}
+or
+\begin{align}
+  x_1^\alpha x_2^{1-\alpha} \leq \alpha x_1 + (1-\alpha)x_2,~~~~ 0<\alpha<1
+  \label{eq:eq1}
+\end{align}
+Let
+\begin{align}
+  x_1 = |x|^p,~~~\alpha = \frac{1}{p}, \text{so that}~~ 1-\alpha = 1-\frac{1}{p} \triangleq \frac{1}{q},~~~~x_2 = |y|^q
+  \label{eq:eq2}
+\end{align}
+\end{frame}
+\begin{frame}
+  so that \eqref{eq:eq1} becomes
+  \begin{align}
+    |xy| \leq \frac{|x|^p}{p} + \frac{|y|^q}{q}, p>1,
+    \label{eq:eq3}
+  \end{align}
+  the Holder's inequality. From \eqref{eq:eq2}, note that
+  \begin{align}
+    \frac{1}{p} + \frac{1}{q} = 1, ~~~ p>1, ~~~ q>1
+    \label{eq:eq4}
+  \end{align}
+  (ii) Define
+  \begin{align*}
+    x = X\brak{E\cbrak{|X|^p}}^{-1/p},~~~~ y = Y\brak{E\cbrak{|Y|^q}}^{-1/q}
+  \end{align*}
+  where p and q are as in \eqref{eq:eq4}. Substituting these into the Holder's inequality in \eqref{eq:eq3}, we get
+  \begin{align}
+    |XY| \leq p^{-1}|X|^p\brak{E\cbrak{|X|^p}}^{1/p-1}\brak{E\cbrak{|Y|^q}}^{1/q}\nonumber\\
+    +q^{-1}|Y|^q\brak{E\cbrak{|Y|^q}}^{1/q-1}\brak{E\cbrak{|X|^p}}^{1/p}
+    \label{eq:eq5}
+  \end{align}
+\end{frame}
+\begin{frame}
+  Taking expected values on both sides of \eqref{eq:eq5}, we get
+  \begin{align}
+    E\cbrak{|XY|}\leq\brak{E\cbrak{|X|^p}}^{1/p}\brak{E\cbrak{|Y|^q}}^{1/q}
+    \label{eq:eq6}
+  \end{align}
+  which represents the generalization of the Cauchy-Schwarz inequality.\\
+  (Note p=q=2 corresponds to Cauchy-Schwarz inequality)
+  (iii) To prove the desired inequality, notice that
+  \begin{align*}
+    &|X+Y|^p = |X+Y||X+Y|^{p-1}\\
+    &~~~~~~~~~~~\leq|X||X+Y|^{p-1}+|Y||X+Y|^{p-1},~~~~p>1
+  \end{align*}
+  and taking the expected values on both sides we get
+  \begin{align}
+    E\cbrak{|X+Y|^p}\leq E\cbrak{|X||X+Y|^{p-1}}+ E\cbrak{|Y||X+Y|^{p-1}}
+    \label{eq:eq7}
+  \end{align}
+  Applying \eqref{eq:eq6} to each term on the right side of \eqref{eq:eq7} we get
+  \begin{align}
+    E\cbrak{|X||X+Y|^{p-1}}\leq  \brak{E\cbrak{|X|^{p}}}^{1/p}\brak{E\cbrak{|X+Y|^{(p-1)q}}}^{1/q}
+    \label{eq:eq8}
+  \end{align}
+\end{frame}
+\begin{frame}
+  and
+  \begin{align}
+    E\cbrak{|Y||X+Y|^{p-1}}\leq  \brak{E\cbrak{|Y|^{p}}}^{1/p}\brak{E\cbrak{|X+Y|^{(p-1)q}}}^{1/q}
+    \label{eq:eq9}
+  \end{align}
+  Using \eqref{eq:eq8} and \eqref{eq:eq9} together with $(p-1)q = p$ in \eqref{eq:eq7} we get
+  \begin{align*}
+    E\cbrak{|X+Y|^p}\leq \sbrak{\brak{E\cbrak{|X|^{p}}}^{1/p}+\brak{E\cbrak{|Y|^{p}}}^{1/p}}.\brak{E\cbrak{|X+Y|^{(p-1)q}}}^{1/q}
+  \end{align*}
+  or for $p>1$
+  \begin{align*}
+    \brak{E\cbrak{|X+Y|^p}}^{1/p}\leq \brak{E\cbrak{|X|^{p}}}^{1/p}+\brak{E\cbrak{|Y|^{p}}}^{1/p}
+  \end{align*}
+  the desired inequality. Since $p=1$ follows trivially, we get
+  \begin{align*}
+    \frac{ \brak{E\cbrak{|X+Y|^p}}^{1/p}}{\brak{E\cbrak{|X|^{p}}}^{1/p}+\brak{E\cbrak{|Y|^{p}}}^{1/p}}\leq 1, ~~~~ p\geq 1
+  \end{align*}
+\end{frame}
+\end{document}     
